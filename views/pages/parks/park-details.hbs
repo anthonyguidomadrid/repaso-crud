@@ -1,0 +1,20 @@
+<div class="container coasters-index">
+
+    <h1 style="font-weight: 100">{{park.name}}</h1>
+
+    <h4>Descripción</h4>
+    <p>{{park.description}}</p>
+    <p><strong>Longitud: </strong> {{park.length}}m | <strong>Inversiones: </strong> {{park.inversions}}
+
+        <hr>
+
+    {{#if isAdmin}} 
+    <form action="/parks/delete?id={{park.id}}" method="POST">
+        <button type="submit">Remove</button>
+    </form><br>
+
+    <a href="/parks/edit/{{park.id}}">Edit</a><br><br>
+    {{/if}}
+    <a href="/parks" class="btn btn-dark">Volver</a>
+
+</div>
